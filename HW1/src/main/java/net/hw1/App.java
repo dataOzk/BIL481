@@ -23,9 +23,10 @@ public class App {
         }
 
         // Out of Bounds değer var mı?
-        int maxLength = Math.max(str1.length(), str2.length());
+        int maxLength1= str1.length();
+        int maxLength2= str2.length();
         for (int i = 0; i < array1.length; i++) {
-            if (array1[i] < 0 || array1[i] >= maxLength || array2[i] < 0 || array2[i] >= maxLength) {
+            if (array1[i] < 0 || array1[i] >= maxLength1 || array2[i] < 0 || array2[i] >= maxLength2) {
                 throw new IllegalArgumentException("Array indices out of bounds");
             }
         }

@@ -65,19 +65,33 @@ public class AppTest {
     @Test
     public void testReplaceCharacters_UnevenArrays() {
         String str1 = "Hello";
-        String str2 = "World";  // Empty second string
+        String str2 = "World";  
         int[] array1 = {2, 3, 4, 1, 0}; 
         int[] array2 = {4, 1, 2,}; 
 
-        // Use a try-catch block to catch the expected IllegalArgumentException
         try {
             App.replaceCharacters(str1, str2, array1, array2);
-            // If no exception is thrown, fail the test
             fail("Expected IllegalArgumentException was not thrown");
         } catch (IllegalArgumentException e) {
-            // If an IllegalArgumentException is thrown, the test passes
-            // No further action needed
+            
         }
     }
+
+    @Test
+    public void testReplaceCharacters_OutOfBoundsIndex() {
+        String str1 = "Hello";
+        String str2 = "World";
+        int[] array1 = {2, 6};  
+        int[] array2 = {4, 1};
+
+        try {
+            App.replaceCharacters(str1, str2, array1, array2);
+        } catch (IllegalArgumentException e) {
+            return;
+        }
+        throw new AssertionError("Expected IllegalArgumentException, but no exception was thrown");
+    }
+
+
 }
 
