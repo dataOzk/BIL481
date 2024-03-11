@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* net.hw1.App
+target/HW1-1.0.jar
