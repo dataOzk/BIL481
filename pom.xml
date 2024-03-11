@@ -8,7 +8,6 @@
     <artifactId>HW1</artifactId>
     <version>1.0</version>
 
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -77,12 +76,27 @@
                     <groupId>com.heroku.sdk</groupId>
                     <artifactId>heroku-maven-plugin</artifactId>
                     <version>3.0.7</version>
-
-    <configuration>
-    <appName>bil481hw1</appName>
-      </configuration>
-
+                    <configuration>
+                        <appName>bil481hw1</appName>
+                    </configuration>
                 </plugin>
+                
+                <!-- Maven Dependency Plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>3.1.2</version>
+                    <executions>
+                        <execution>
+                            <id>copy-dependencies</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                
             </plugins>
         </pluginManagement>
     </build>
